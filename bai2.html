@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .course-block {
+      position: relative;
+      width: 200px;
+      height: 280px;
+      overflow: hidden; /* Ẩn phần ảnh vượt ra khỏi khối */
+      border: 2px solid #ccc;
+      transition: border-color 0.3s ease;
+      margin: 40px;
+      border-radius: 3px;
+    }
+
+    .course-block:hover {
+      border-color: skyblue;
+    }
+
+    .course-block img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 250px;
+      transition: opacity 0.2s ease;
+    }
+
+    .course-block:hover img {
+      opacity: 0.3; /* Thay đổi độ mờ của ảnh khi hover */
+    }
+
+    .course-block .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .course-block:hover .overlay {
+      opacity: 1;
+    }
+
+    .course-block .overlay-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
+
+    .course-block .overlay-content button {
+      display: none;
+    }
+
+    .course-block:hover .overlay-content button {
+      display: block;
+      background-color: pink;
+      border-radius: 5px;
+      width: 100px;
+      height: 30px;
+      border: none;
+    }
+
+    .image-container {
+      display: flex; /* Hiển thị các container thành một hàng ngang */
+      width: 1000px;
+      margin-left: 300px;
+    }
+
+    .image-container .course-block {
+      position: relative; /* Thiết lập vị trí tương đối để chữ có thể chồng lên */
+      width: 33%; /* Đặt kích thước ảnh, ví dụ: 30% chiều rộng */
+      
+    }
+
+    .image-container img {
+      display: block;
+      width: 250px; /* Đảm bảo ảnh chiếm toàn bộ không gian của container */
+      object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
+    }
+    
+    .image-container .text-overlay {
+      position: absolute; /* Thiết lập vị trí tuyệt đối để chữ chồng lên ảnh */
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: pink;
+      text-align: center;
+      padding: 10px;
+      font-size: 20px;
+    }
+    .overlay-content:hover{
+      background-color: grey;
+    }
+  </style>
+</head>
+<body id="nen">
+    <div class="image-container">
+        <div class="course-block">
+            <img src="anh1.png" alt="Ảnh khoá học">
+            <div class="text-overlay">
+              <span>MODULE HTML</span>
+            </div>
+            <div class="overlay">
+              <div class="overlay-content">
+                <button>Vào học</button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="course-block">
+            <img src="snh2.png" alt="Ảnh khoá học">
+            <div class="text-overlay">
+              <span>MODULE CSS</span>
+            </div>
+            <div class="overlay">
+              <div class="overlay-content">
+                <button>Vào học</button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="course-block">
+            <img src="anh3.png" alt="Ảnh khoá học">
+            <div class="text-overlay">
+              <span>MODULE JS</span>
+            </div>
+            <div class="overlay">
+              <div class="overlay-content">
+                <button>Vào học</button>
+              </div>
+            </div>
+          </div>
+    </div>
+</body>
+</html>
